@@ -1,0 +1,13 @@
+
+<% @countries.each do |country| %>
+  <%= country.country %> has a population of <%= country.population %>.
+  <%= link_to("Show #{country.country}", country_path(country)) %>
+  <br>
+  <%= image_tag(country.flag) %>
+  <br>
+  <%= button_to('Delete Country', country_path(country), method: :delete, data: {confirm: 'Delete? Are you sure?!'}) %>
+  <br>
+  <%= link_to('Edit Country', edit_country_path(country)) %>
+  <br>
+  <br>
+<%end%>
